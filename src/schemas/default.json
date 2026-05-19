@@ -1,0 +1,171 @@
+{
+  "id": "clean_masters",
+  "name": "Clean Masters Delivery",
+  "version": "1.0",
+  "separator": "_",
+  "segments": [
+    {
+      "id": "program",
+      "label": "Program Name",
+      "type": "text",
+      "required": true,
+      "sanitize": true,
+      "placeholder": "Ex: MonFilm",
+      "position": 0
+    },
+    {
+      "id": "version",
+      "label": "Version",
+      "type": "text",
+      "required": false,
+      "sanitize": true,
+      "placeholder": "Ex: V2, Director_Cut",
+      "position": 1
+    },
+    {
+      "id": "date",
+      "label": "Date",
+      "type": "date",
+      "required": true,
+      "format": "YYMMDD",
+      "position": 10
+    },
+    {
+      "id": "language",
+      "label": "Language",
+      "type": "select",
+      "required": true,
+      "options": [
+        {"value": "FR", "label": "Français"},
+        {"value": "EN", "label": "English"},
+        {"value": "ES", "label": "Español"},
+        {"value": "DE", "label": "Deutsch"},
+        {"value": "IT", "label": "Italiano"},
+        {"value": "PT", "label": "Português"},
+        {"value": "JA", "label": "日本語"},
+        {"value": "KO", "label": "한국어"},
+        {"value": "ZH", "label": "中文"},
+        {"value": "AR", "label": "العربية"},
+        {"value": "HI", "label": "हिन्दी"},
+        {"value": "RU", "label": "Русский"}
+      ],
+      "position": 2
+    },
+    {
+      "id": "subtitles",
+      "label": "Subtitles",
+      "type": "select",
+      "required": true,
+      "options": [
+        {"value": "NOSUB", "label": "No Subtitles"},
+        {"value": "FR", "label": "Français"},
+        {"value": "EN", "label": "English"},
+        {"value": "ES", "label": "Español"}
+      ],
+      "prefix": "ST",
+      "noValueToken": "NOSUB",
+      "composite": {
+        "mergeWith": "language",
+        "separator": "-",
+        "format": "{language}-{subtitles}"
+      },
+      "position": 3
+    },
+    {
+      "id": "fileformat",
+      "label": "File Format",
+      "type": "select",
+      "required": true,
+      "options": [
+        {"value": "MOV", "label": "MOV"},
+        {"value": "MXF", "label": "MXF"},
+        {"value": "MP4", "label": "MP4"},
+        {"value": "AVI", "label": "AVI"},
+        {"value": "ProRes", "label": "ProRes"},
+        {"value": "DNxHD", "label": "DNxHD"}
+      ],
+      "position": 4
+    },
+    {
+      "id": "videoformat",
+      "label": "Video Format",
+      "type": "select",
+      "required": true,
+      "options": [
+        {"value": "SD", "label": "SD"},
+        {"value": "HD", "label": "HD"},
+        {"value": "4K", "label": "4K"}
+      ],
+      "position": 5
+    },
+    {
+      "id": "videoaspect",
+      "label": "Video Aspect Ratio",
+      "type": "text",
+      "required": false,
+      "placeholder": "Ex: 1.85, 2.39",
+      "sanitize": true,
+      "sanitizeRule": "strip_dots_commas",
+      "position": 6
+    },
+    {
+      "id": "videores",
+      "label": "Video Resolution",
+      "type": "text",
+      "required": false,
+      "placeholder": "Ex: 1920x1080",
+      "sanitize": true,
+      "position": 7
+    },
+    {
+      "id": "cadence",
+      "label": "Cadence (fps)",
+      "type": "select",
+      "required": false,
+      "options": [
+        {"value": "", "label": "—"},
+        {"value": "23.976", "label": "23.976"},
+        {"value": "24", "label": "24"},
+        {"value": "25", "label": "25"},
+        {"value": "29.97", "label": "29.97"},
+        {"value": "30", "label": "30"},
+        {"value": "50", "label": "50"},
+        {"value": "59.94", "label": "59.94"}
+      ],
+      "position": 8
+    },
+    {
+      "id": "audioformat",
+      "label": "Audio Format",
+      "type": "select",
+      "required": true,
+      "options": [
+        {"value": "20", "label": "Stereo (2.0)"},
+        {"value": "51", "label": "Surround (5.1)"},
+        {"value": "71", "label": "7.1 Surround"},
+        {"value": "10", "label": "Mono (1.0)"},
+        {"value": "NOAUDIO", "label": "No Audio Track"}
+      ],
+      "position": 9
+    },
+    {
+      "id": "audiocodec",
+      "label": "Audio Codec",
+      "type": "text",
+      "required": false,
+      "sanitize": true,
+      "placeholder": "Ex: PCM, AAC",
+      "position": 10
+    }
+  ],
+  "metadata": [
+    {
+      "id": "description",
+      "label": "Description",
+      "type": "text",
+      "maxLength": 50,
+      "placeholder": "Description (max 50 chars)",
+      "includeInFilename": false
+    }
+  ]
+}
