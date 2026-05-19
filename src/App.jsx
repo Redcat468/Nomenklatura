@@ -3,6 +3,7 @@ import AppHeader from './components/Layout/AppHeader';
 import AppFooter from './components/Layout/AppFooter';
 import DynamicForm from './components/Generator/DynamicForm';
 import EntryList from './components/EntryList/EntryList';
+import ExportPanel from './components/ImportExport/ExportPanel';
 import { useSchema } from './hooks/useSchema';
 import { useEntries } from './hooks/useEntries';
 
@@ -47,6 +48,7 @@ function App() {
       <main className="flex-1 w-full max-w-[960px] mx-auto px-6 py-6 flex flex-col gap-6">
         <DynamicForm schema={schema} initialFormValues={initialFormValues} onAdd={handleAdd} onUpdate={handleUpdate} editingEntry={editingEntry} onCancelEdit={handleCancelEdit} />
         <EntryList entries={entries} editingIndex={editingIndex} onEdit={handleEdit} onDuplicate={duplicateEntry} onDelete={handleDelete} onReorder={reorderEntries} />
+        <ExportPanel entries={entries} schema={schema} />
       </main>
 
       <AppFooter />
