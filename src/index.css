@@ -60,3 +60,38 @@ input, select, textarea {
 :root {
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(245, 158, 11, 0.4); }
+  50% { border-color: rgba(245, 158, 11, 1); }
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-subtle);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-focus);
+}
+
+select option {
+  background-color: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.7);
+}
