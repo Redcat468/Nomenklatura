@@ -1,0 +1,11 @@
+{
+  "name": "Clean Masters",
+  "description": "Standard clean master delivery — 4 files, multi-language",
+  "schemaId": "clean_masters",
+  "entries": [
+    {"formValues": {"program": "", "version": "FINAL", "language": "FR", "subtitles": "NOSUB", "fileformat": "ProRes", "videoformat": "HD", "videoaspect": "1.78", "videores": "1920x1080", "cadence": "25", "audioformat": "51", "audiocodec": "PCM"}, "metadata": {"description": "Master ProRes FR 5.1"}},
+    {"formValues": {"program": "", "version": "FINAL", "language": "EN", "subtitles": "NOSUB", "fileformat": "ProRes", "videoformat": "HD", "videoaspect": "1.78", "videores": "1920x1080", "cadence": "25", "audioformat": "51", "audiocodec": "PCM"}, "metadata": {"description": "Master ProRes EN 5.1"}},
+    {"formValues": {"program": "", "version": "FINAL", "language": "FR", "subtitles": "NOSUB", "fileformat": "ProRes", "videoformat": "HD", "videoaspect": "1.78", "videores": "1920x1080", "cadence": "25", "audioformat": "20", "audiocodec": "PCM"}, "metadata": {"description": "Master ProRes FR Stereo"}},
+    {"formValues": {"program": "", "version": "FINAL", "language": "EN", "subtitles": "NOSUB", "fileformat": "ProRes", "videoformat": "HD", "videoaspect": "1.78", "videores": "1920x1080", "cadence": "25", "audioformat": "20", "audiocodec": "PCM"}, "metadata": {"description": "Master ProRes EN Stereo"}}
+  ]
+}

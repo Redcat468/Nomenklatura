@@ -1,0 +1,9 @@
+{
+  "name": "DCP Festival",
+  "description": "Festival DCP delivery — 2K scope, 5.1 surround",
+  "schemaId": "clean_masters",
+  "entries": [
+    {"formValues": {"program": "", "version": "FINAL", "language": "FR", "subtitles": "NOSUB", "fileformat": "MXF", "videoformat": "4K", "videoaspect": "2.39", "videores": "4096x1716", "cadence": "24", "audioformat": "51", "audiocodec": "PCM"}, "metadata": {"description": "DCP Master FR Scope"}},
+    {"formValues": {"program": "", "version": "FINAL", "language": "EN", "subtitles": "EN", "fileformat": "MXF", "videoformat": "4K", "videoaspect": "2.39", "videores": "4096x1716", "cadence": "24", "audioformat": "51", "audiocodec": "PCM"}, "metadata": {"description": "DCP Master EN Scope STEN"}}
+  ]
+}

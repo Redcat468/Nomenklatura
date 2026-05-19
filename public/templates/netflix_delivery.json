@@ -1,0 +1,11 @@
+{
+  "name": "Netflix Delivery Package",
+  "description": "Standard Netflix delivery — multi-language, ProRes + MP4",
+  "schemaId": "clean_masters",
+  "entries": [
+    {"formValues": {"program": "", "version": "FINAL", "language": "FR", "subtitles": "NOSUB", "fileformat": "ProRes", "videoformat": "4K", "videoaspect": "1.85", "videores": "3996x2160", "cadence": "24", "audioformat": "51", "audiocodec": "PCM"}, "metadata": {"description": "Master ProRes FR 4K"}},
+    {"formValues": {"program": "", "version": "FINAL", "language": "EN", "subtitles": "EN", "fileformat": "ProRes", "videoformat": "4K", "videoaspect": "1.85", "videores": "3996x2160", "cadence": "24", "audioformat": "51", "audiocodec": "PCM"}, "metadata": {"description": "Master ProRes EN 4K"}},
+    {"formValues": {"program": "", "version": "FINAL", "language": "FR", "subtitles": "FR", "fileformat": "MP4", "videoformat": "HD", "videoaspect": "1.85", "videores": "1920x1080", "cadence": "24", "audioformat": "20", "audiocodec": "AAC"}, "metadata": {"description": "Screener FR HD"}},
+    {"formValues": {"program": "", "version": "FINAL", "language": "EN", "subtitles": "EN", "fileformat": "MP4", "videoformat": "HD", "videoaspect": "1.85", "videores": "1920x1080", "cadence": "24", "audioformat": "20", "audiocodec": "AAC"}, "metadata": {"description": "Screener EN HD"}}
+  ]
+}

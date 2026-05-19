@@ -5,6 +5,7 @@ import DynamicForm from './components/Generator/DynamicForm';
 import EntryList from './components/EntryList/EntryList';
 import ExportPanel from './components/ImportExport/ExportPanel';
 import ImportPanel from './components/ImportExport/ImportPanel';
+import TemplateLoader from './components/ImportExport/TemplateLoader';
 import { useSchema } from './hooks/useSchema';
 import { useEntries } from './hooks/useEntries';
 
@@ -47,6 +48,11 @@ function App() {
     else appendEntries(newEntries);
   }, [replaceAllEntries, appendEntries]);
 
+  const handleTemplateLoad = useCallback((newEntries, mode) => {
+    if (mode === 'replace') replaceAllEntries(newEntries);
+    else appendEntries(newEntries);
+  }, [replaceAllEntries, appendEntries]);
+
   return (
     <div className="min-h-screen flex flex-col bg-bg-base">
       <AppHeader onOpenTemplates={() => setShowTemplates(true)} onOpenImport={() => setShowImport(true)} />
@@ -60,6 +66,7 @@ function App() {
       <AppFooter />
 
       {showImport && <ImportPanel schema={schema} onImport={handleImport} onClose={() => setShowImport(false)} />}
+      {showTemplates && <TemplateLoader schema={schema} onLoad={handleTemplateLoad} onClose={() => setShowTemplates(false)} />}
     </div>
   );
 }

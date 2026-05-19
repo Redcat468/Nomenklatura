@@ -1,0 +1,5 @@
+[
+  {"file": "clean_masters.json", "name": "Clean Masters", "description": "Standard clean master delivery — 4 files, multi-language"},
+  {"file": "netflix_delivery.json", "name": "Netflix Delivery Package", "description": "Standard Netflix delivery — multi-language, ProRes + H264"},
+  {"file": "dcp_festival.json", "name": "DCP Festival", "description": "Festival DCP delivery — 2K scope, 5.1 surround"}
+]
