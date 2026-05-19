@@ -28,7 +28,7 @@
       "type": "date",
       "required": true,
       "format": "YYMMDD",
-      "position": 10
+      "position": 11
     },
     {
       "id": "language",
