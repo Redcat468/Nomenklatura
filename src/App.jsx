@@ -6,6 +6,7 @@ import EntryList from './components/EntryList/EntryList';
 import ExportPanel from './components/ImportExport/ExportPanel';
 import ImportPanel from './components/ImportExport/ImportPanel';
 import TemplateLoader from './components/ImportExport/TemplateLoader';
+import FileSizeCalculator from './components/Tools/FileSizeCalculator';
 import { useSchema } from './hooks/useSchema';
 import { useEntries } from './hooks/useEntries';
 
@@ -61,6 +62,7 @@ function App() {
         <DynamicForm schema={schema} initialFormValues={initialFormValues} onAdd={handleAdd} onUpdate={handleUpdate} editingEntry={editingEntry} onCancelEdit={handleCancelEdit} />
         <EntryList entries={entries} editingIndex={editingIndex} onEdit={handleEdit} onDuplicate={duplicateEntry} onDelete={handleDelete} onReorder={reorderEntries} />
         <ExportPanel entries={entries} schema={schema} />
+        <FileSizeCalculator />
       </main>
 
       <AppFooter />
