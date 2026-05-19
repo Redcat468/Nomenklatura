@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@theme {
+  --font-sans: 'Geist Sans', 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-bg-base: #0C0C0E;
+  --color-bg-surface: #141418;
+  --color-bg-elevated: #1C1C22;
+  --color-bg-hover: #24242C;
+
+  --color-border-subtle: #2A2A34;
+  --color-border-focus: #4A4A5A;
+
+  --color-text-primary: #E8E8EC;
+  --color-text-secondary: #8888A0;
+  --color-text-muted: #555568;
+
+  --color-accent: #3B82F6;
+  --color-accent-hover: #2563EB;
+  --color-accent-subtle: rgba(59, 130, 246, 0.12);
+
+  --color-success: #22C55E;
+  --color-error: #EF4444;
+  --color-warning: #F59E0B;
+
+  --color-seg-program: #60A5FA;
+  --color-seg-version: #A78BFA;
+  --color-seg-langsub: #34D399;
+  --color-seg-fileformat: #FB923C;
+  --color-seg-videoformat: #22D3EE;
+  --color-seg-aspect: #F472B6;
+  --color-seg-resolution: #818CF8;
+  --color-seg-cadence: #D4A574;
+  --color-seg-audioformat: #F87171;
+  --color-seg-audiocodec: #94A3B8;
+  --color-seg-date: #7DD3FC;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-accent-subtle);
+  color: var(--color-text-primary);
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+:root {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
