@@ -12,9 +12,18 @@ function downloadFile(content, filename, mimeType) {
   URL.revokeObjectURL(url);
 }
 
+function yymmdd() {
+  const d = new Date();
+  const yy = String(d.getFullYear()).slice(-2);
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const dd = String(d.getDate()).padStart(2, '0');
+  return `${yy}${mm}${dd}`;
+}
+
 export default function ExportPanel({ entries, schema }) {
   if (entries.length === 0) return null;
-  const programName = entries[0]?.formValues?.program || 'export';
+  const programName = (entries[0]?.formValues?.program || 'EXPORT').replace(/\s+/g, '_').toUpperCase();
+  const baseName = `${programName}_EXPORT-LIST_${yymmdd()}`;
 
   const handleExportCSV = () => {
     const segmentIds = schema.segments.map(s => s.id);
@@ -27,13 +36,13 @@ export default function ExportPanel({ entries, schema }) {
       return row;
     });
     const csv = Papa.unparse(rows);
-    downloadFile(csv, `${programName}_export.csv`, 'text/csv');
+    downloadFile(csv, `${baseName}.csv`, 'text/csv');
   };
 
   const handleExportJSON = () => {
     const data = { schema: schema.id, exportedAt: new Date().toISOString(), program: programName, entries };
     const json = JSON.stringify(data, null, 2);
-    downloadFile(json, `${programName}_export.json`, 'application/json');
+    downloadFile(json, `${baseName}.json`, 'application/json');
   };
 
   const handleExportPDF = async () => {

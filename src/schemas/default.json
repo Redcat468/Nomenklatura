@@ -10,7 +10,7 @@
       "type": "text",
       "required": true,
       "sanitize": true,
-      "placeholder": "Ex: MonFilm",
+      "placeholder": "Ex: Mon Film",
       "position": 0
     },
     {
@@ -36,18 +36,18 @@
       "type": "select",
       "required": true,
       "options": [
-        {"value": "FR", "label": "Français"},
-        {"value": "EN", "label": "English"},
-        {"value": "ES", "label": "Español"},
-        {"value": "DE", "label": "Deutsch"},
-        {"value": "IT", "label": "Italiano"},
-        {"value": "PT", "label": "Português"},
-        {"value": "JA", "label": "日本語"},
-        {"value": "KO", "label": "한국어"},
-        {"value": "ZH", "label": "中文"},
-        {"value": "AR", "label": "العربية"},
-        {"value": "HI", "label": "हिन्दी"},
-        {"value": "RU", "label": "Русский"}
+        { "value": "FR", "label": "Français" },
+        { "value": "EN", "label": "English" },
+        { "value": "ES", "label": "Español" },
+        { "value": "DE", "label": "Deutsch" },
+        { "value": "IT", "label": "Italiano" },
+        { "value": "PT", "label": "Português" },
+        { "value": "JA", "label": "日本語" },
+        { "value": "KO", "label": "한국어" },
+        { "value": "ZH", "label": "中文" },
+        { "value": "AR", "label": "العربية" },
+        { "value": "HI", "label": "हिन्दी" },
+        { "value": "RU", "label": "Русский" }
       ],
       "position": 2
     },
@@ -57,10 +57,19 @@
       "type": "select",
       "required": true,
       "options": [
-        {"value": "NOSUB", "label": "No Subtitles"},
-        {"value": "FR", "label": "Français"},
-        {"value": "EN", "label": "English"},
-        {"value": "ES", "label": "Español"}
+        { "value": "NOSUB", "label": "No Subtitles" },
+        { "value": "FR", "label": "Français" },
+        { "value": "EN", "label": "English" },
+        { "value": "ES", "label": "Español" },
+        { "value": "DE", "label": "Deutsch" },
+        { "value": "IT", "label": "Italiano" },
+        { "value": "PT", "label": "Português" },
+        { "value": "JA", "label": "日本語" },
+        { "value": "KO", "label": "한국어" },
+        { "value": "ZH", "label": "中文" },
+        { "value": "AR", "label": "العربية" },
+        { "value": "HI", "label": "हिन्दी" },
+        { "value": "RU", "label": "Русский" }
       ],
       "prefix": "ST",
       "noValueToken": "NOSUB",
@@ -77,12 +86,16 @@
       "type": "select",
       "required": true,
       "options": [
-        {"value": "MOV", "label": "MOV"},
-        {"value": "MXF", "label": "MXF"},
-        {"value": "MP4", "label": "MP4"},
-        {"value": "AVI", "label": "AVI"},
-        {"value": "ProRes", "label": "ProRes"},
-        {"value": "DNxHD", "label": "DNxHD"}
+        { "value": "ProRes_422HQ", "label": "ProRes_422HQ" },
+        { "value": "ProRes_4444", "label": "ProRes_4444" },
+        { "value": "DnxHD_185X", "label": "DnxHD_185X" },
+        { "value": "DnxHR_444", "label": "DnxHR_444" },
+        { "value": "H264-LBR", "label": "H264-LBR" },
+        { "value": "H264-HBR", "label": "H264-HBR" },
+        { "value": "DCP", "label": "DCP" },
+        { "value": "DPX", "label": "DPX" },
+        { "value": "WAVE", "label": "WAVE" },
+        { "value": "EXR", "label": "EXR" }
       ],
       "position": 4
     },
@@ -92,9 +105,16 @@
       "type": "select",
       "required": true,
       "options": [
-        {"value": "SD", "label": "SD"},
-        {"value": "HD", "label": "HD"},
-        {"value": "4K", "label": "4K"}
+        { "value": "HD", "label": "HD" },
+        { "value": "UHD", "label": "UHD" },
+        { "value": "4K", "label": "4K" },
+        { "value": "2K", "label": "2K" },
+        { "value": "6K", "label": "6K" },
+        { "value": "2KDCI", "label": "2KDCI" },
+        { "value": "4KDCI", "label": "4KDCI" },
+        { "value": "2KFLAT", "label": "2KFLAT" },
+        { "value": "4KFLAT", "label": "4KFLAT" },
+        { "value": "SD", "label": "SD" }
       ],
       "position": 5
     },
@@ -123,14 +143,14 @@
       "type": "select",
       "required": false,
       "options": [
-        {"value": "", "label": "—"},
-        {"value": "23.976", "label": "23.976"},
-        {"value": "24", "label": "24"},
-        {"value": "25", "label": "25"},
-        {"value": "29.97", "label": "29.97"},
-        {"value": "30", "label": "30"},
-        {"value": "50", "label": "50"},
-        {"value": "59.94", "label": "59.94"}
+        { "value": "", "label": "—" },
+        { "value": "23.976", "label": "23.976" },
+        { "value": "24", "label": "24" },
+        { "value": "25", "label": "25" },
+        { "value": "29.97", "label": "29.97" },
+        { "value": "30", "label": "30" },
+        { "value": "50", "label": "50" },
+        { "value": "59.94", "label": "59.94" }
       ],
       "position": 8
     },
@@ -140,11 +160,11 @@
       "type": "select",
       "required": true,
       "options": [
-        {"value": "20", "label": "Stereo (2.0)"},
-        {"value": "51", "label": "Surround (5.1)"},
-        {"value": "71", "label": "7.1 Surround"},
-        {"value": "10", "label": "Mono (1.0)"},
-        {"value": "NOAUDIO", "label": "No Audio Track"}
+        { "value": "20", "label": "Stereo (2.0)" },
+        { "value": "51", "label": "Surround (5.1)" },
+        { "value": "71", "label": "7.1 Surround" },
+        { "value": "10", "label": "Mono (1.0)" },
+        { "value": "NOAUDIO", "label": "No Audio Track" }
       ],
       "position": 9
     },

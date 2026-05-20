@@ -34,11 +34,11 @@ export default function DynamicForm({ schema, initialFormValues, onAdd, onUpdate
     }
     if (editingEntry) {
       onUpdate(formValues, metadata);
+      setFormValues(initialFormValues);
+      setMetadata({});
     } else {
       onAdd(formValues, metadata);
     }
-    setFormValues(initialFormValues);
-    setMetadata({});
     setErrors([]);
   }, [schema, formValues, metadata, editingEntry, onAdd, onUpdate, initialFormValues]);
 

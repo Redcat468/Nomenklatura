@@ -15,12 +15,11 @@ const SEGMENT_COLORS = {
 };
 
 const SEPARATOR_COLOR = [100, 100, 120];
-const BG_DARK = [18, 18, 22];
 const BG_CARD = [28, 28, 36];
-const TEXT_MUTED = [120, 120, 145];
-const TEXT_PRIMARY = [232, 232, 236];
+const TEXT_MUTED = [130, 130, 150];
+const TEXT_PRIMARY = [40, 40, 50];
 const ACCENT = [59, 130, 246];
-const GOLD = [193, 171, 123];
+const GOLD = [160, 135, 80];
 
 function svgToImage(svgUrl) {
   return new Promise((resolve, reject) => {
@@ -80,7 +79,9 @@ export async function generatePDF(entries, schema, programName) {
   const pageHeight = doc.internal.pageSize.getHeight();
   const margin = 15;
   const contentWidth = pageWidth - margin * 2;
-  const dateStr = new Date().toISOString().split('T')[0];
+  const now = new Date();
+  const dateStr = now.toISOString().split('T')[0];
+  const yymmdd = String(now.getFullYear()).slice(-2) + String(now.getMonth() + 1).padStart(2, '0') + String(now.getDate()).padStart(2, '0');
 
   let logoData = null;
   try {
@@ -91,13 +92,12 @@ export async function generatePDF(entries, schema, programName) {
   }
 
   function drawPageBackground() {
-    doc.setFillColor(...BG_DARK);
-    doc.rect(0, 0, pageWidth, pageHeight, 'F');
+    // white background (default) — no fill needed
   }
 
   function drawHeader(y) {
     if (logoData) {
-      const logoH = 8;
+      const logoH = 11.2;
       const logoW = logoH * (960 / 268);
       doc.addImage(logoData, 'PNG', margin, y - 3, logoW, logoH);
     }
@@ -105,7 +105,7 @@ export async function generatePDF(entries, schema, programName) {
     doc.setFontSize(16);
     doc.setFont('helvetica', 'bold');
     doc.setTextColor(...TEXT_PRIMARY);
-    const titleY = y + 14;
+    const titleY = y + 17;
     doc.text('EXPORT LIST', margin, titleY);
 
     doc.setFontSize(10);
@@ -185,5 +185,6 @@ export async function generatePDF(entries, schema, programName) {
     drawFooter(i, totalPages);
   }
 
-  doc.save(`${programName || 'export'}_${dateStr}.pdf`);
+  const safeName = (programName || 'EXPORT').replace(/\s+/g, '_').toUpperCase();
+  doc.save(`${safeName}_EXPORT-LIST_${yymmdd}.pdf`);
 }

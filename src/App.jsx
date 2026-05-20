@@ -5,7 +5,6 @@ import DynamicForm from './components/Generator/DynamicForm';
 import EntryList from './components/EntryList/EntryList';
 import ExportPanel from './components/ImportExport/ExportPanel';
 import ImportPanel from './components/ImportExport/ImportPanel';
-import TemplateLoader from './components/ImportExport/TemplateLoader';
 import FileSizeCalculator from './components/Tools/FileSizeCalculator';
 import { useSchema } from './hooks/useSchema';
 import { useEntries } from './hooks/useEntries';
@@ -16,7 +15,6 @@ function App() {
 
   const [editingIndex, setEditingIndex] = useState(null);
   const [showImport, setShowImport] = useState(false);
-  const [showTemplates, setShowTemplates] = useState(false);
 
   const editingEntry = editingIndex !== null ? entries[editingIndex] : null;
 
@@ -49,14 +47,9 @@ function App() {
     else appendEntries(newEntries);
   }, [replaceAllEntries, appendEntries]);
 
-  const handleTemplateLoad = useCallback((newEntries, mode) => {
-    if (mode === 'replace') replaceAllEntries(newEntries);
-    else appendEntries(newEntries);
-  }, [replaceAllEntries, appendEntries]);
-
   return (
     <div className="min-h-screen flex flex-col bg-bg-base">
-      <AppHeader onOpenTemplates={() => setShowTemplates(true)} onOpenImport={() => setShowImport(true)} />
+      <AppHeader onOpenImport={() => setShowImport(true)} />
 
       <main className="flex-1 w-full max-w-[960px] mx-auto px-6 py-6 flex flex-col gap-6">
         <DynamicForm schema={schema} initialFormValues={initialFormValues} onAdd={handleAdd} onUpdate={handleUpdate} editingEntry={editingEntry} onCancelEdit={handleCancelEdit} />
@@ -68,7 +61,6 @@ function App() {
       <AppFooter />
 
       {showImport && <ImportPanel schema={schema} onImport={handleImport} onClose={() => setShowImport(false)} />}
-      {showTemplates && <TemplateLoader schema={schema} onLoad={handleTemplateLoad} onClose={() => setShowTemplates(false)} />}
     </div>
   );
 }
