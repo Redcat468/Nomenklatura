@@ -36,8 +36,8 @@ export default function ExportPanel({ entries, schema }) {
     downloadFile(json, `${programName}_export.json`, 'application/json');
   };
 
-  const handleExportPDF = () => {
-    generatePDF(entries, schema, programName);
+  const handleExportPDF = async () => {
+    await generatePDF(entries, schema, programName);
   };
 
   const btnClass = 'flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-white bg-accent rounded-lg hover:bg-accent-hover transition-colors active:scale-[0.98]';
